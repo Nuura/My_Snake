@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Mon Apr 24 15:48:12 2017 SANCHEZ Pierre
+** Last update Mon Apr 24 15:49:59 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
@@ -34,8 +34,8 @@ void    read_map(int argc, char *argv[])
 void generate_map(int argc, char *argv[])
 {
   if (isdigit(*argv[1]) && isdigit(*argv[2])) {
-    int ref_l = atoi(*argv[1]) -1;
-    int ref_h = atoi(*argv[2]) - 1;
+    int ref_l = atoi(argv[1]) -1;
+    int ref_h = atoi(argv[2]) - 1;
     int l = ref_l;
     int h = ref_h;
     while (h >= 0) {
