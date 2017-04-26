@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Mon Apr 24 23:14:52 2017 SANCHEZ Pierre
+** Last update Tue Apr 25 03:46:00 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
@@ -20,28 +20,52 @@ void	read_map(int argc, char *argv[])
   FILE		*f;
   int		c;
   int		i;
-  char		*tab;
+  int		j;
+  /*  char		**tab;
+      t_coord	*s_coord;*/
   
   f = fopen(argv[1], "r");
+  j = 0;
   while (((c = fgetc(f)) != EOF))
     {
-      i++;
+      if (c == '\n')
+	i++;
+      else
+	j++;
     }
+  my_put_nbr(i);
+  my_put_nbr(j);
   fclose(f);
-  tab = malloc(sizeof(char *)  * (i +  1));
+  /* tab = malloc(sizeof(char *)  * (i +  1));*/
   f = fopen(argv[1], "r");
   i = 0;
   while ((c = fgetc(f)) != EOF)
     {
-      tab[i] = c;
+      if(c == '\n')
+	{
+	  /*	  tab[j] = c;*/
+	  j++;
+	}
+      /*      tab[i] = c;*/
       i++;
     }
   i = 0;
-    while (tab[i] != '\0')
+  /*  while (tab[i] != '\0')
     {
-      my_putchar(tab[i]);
+      my_putchar('\n');
+      j = 0;
+      while (tab[i][j] != '\0')
+	{
+	  my_putchar(tab[i][j]);
+	  if(tab[i][j] == 's')
+	    {
+	      s_coord->ypos = i;
+	      s_coord->xpos = j;
+	    }
+	  j++;
+	}
       i++;
-    }
+      }*/
 }
 
 void	 generate_map(int argc, char *argv[])
