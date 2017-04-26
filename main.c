@@ -5,71 +5,43 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Mon Apr 24 20:12:43 2017 SANCHEZ Pierre
+** Last update Mon Apr 24 23:14:52 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include "snake.h"
 
 void	read_map(int argc, char *argv[])
 {
-  FILE	*f;
-  char	*tab;
-  int	c;
-  int	i;
+  FILE		*f;
+  int		c;
+  int		i;
+  char		*tab;
   
   f = fopen(argv[1], "r");
-  i = 0;
-  while ((c = fgetc(f) != EOF))
+  while (((c = fgetc(f)) != EOF))
     {
       i++;
     }
   fclose(f);
-  tab = malloc(sizeof(char *) * i);
+  tab = malloc(sizeof(char *)  * (i +  1));
   f = fopen(argv[1], "r");
   i = 0;
-  while ((c = fgetc(f) != EOF))
+  while ((c = fgetc(f)) != EOF)
     {
       tab[i] = c;
       i++;
     }
-  
-
-  
-
-  /*  FILE * file;
-      int i;
-      int x = 0;
-      int y = 0;
-      char *array1;
-      char **array2;
-  
-      array1 = (char *) malloc(100);
-      array2 = (char **) malloc(20);
-      array2[] = (char);
-  
-      file = fopen(argv[1], "r");
-      if (file)
-      {
-      while ((i = getc(file)) != EOF) {
-      array1[x] = i;
-      array2[x][y] = i;
-      printf("%c", i);
-      if (i == '\n')
-      y++;
-      x++;
-      }*/
-  /*file exists and can be opened
-    ...
-    close file when you're done*/
-  /*    }
-	else
-	{
-	printf("tebi en A\n");
-	file doesn't exists or cannot be opened (es. you don't have access permission )
-	}*/
+  i = 0;
+    while (tab[i] != '\0')
+    {
+      my_putchar(tab[i]);
+      i++;
+    }
 }
 
 void	 generate_map(int argc, char *argv[])

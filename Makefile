@@ -2,7 +2,12 @@ CC	=		gcc
 
 NAME	=		snake
 
-SRC	=		main.c
+SRC	=		main.c 		\
+			tab_str.c 	\
+			my_putchar.c 	\
+			my_putstr.c	\
+			my_put_nbr.c	\
+			snake.h
 
 CFLAGS	=		-Wall -Werror -Wpedantic
 
