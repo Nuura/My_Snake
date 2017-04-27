@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Tue Apr 25 03:46:00 2017 SANCHEZ Pierre
+** Last update Thu Apr 27 04:41:18 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
@@ -21,43 +21,55 @@ void	read_map(int argc, char *argv[])
   int		c;
   int		i;
   int		j;
-  /*  char		**tab;
-      t_coord	*s_coord;*/
+  int		x;
+  int		tmp;
+  char		**tab;
+  t_coord	*s_coord;
   
   f = fopen(argv[1], "r");
+  i = 0;
   j = 0;
+  s_coord = malloc(sizeof(t_coord));
   while (((c = fgetc(f)) != EOF))
     {
-      if (c == '\n')
+      if (c == '\n') {
 	i++;
+	tmp = j;
+	j = 0;
+      }
       else
 	j++;
     }
-  my_put_nbr(i);
-  my_put_nbr(j);
   fclose(f);
-  /* tab = malloc(sizeof(char *)  * (i +  1));*/
+  x = i;
+  tab = malloc(sizeof(char *) * (i + 1));
+  for (i = 0; i <= x; i++)
+    {
+      tab[i] = malloc(sizeof(char) * (tmp + 1));
+    }
   f = fopen(argv[1], "r");
   i = 0;
   while ((c = fgetc(f)) != EOF)
     {
-      if(c == '\n')
+      if (c == '\n')
 	{
-	  /*	  tab[j] = c;*/
-	  j++;
+	  tab[i][j] = c;
+	  tab[i][j++] = '\0';
+	  i++;
+	  j = 0;
 	}
-      /*      tab[i] = c;*/
-      i++;
+      tab[i][j] = c;
+      j++;
     }
   i = 0;
-  /*  while (tab[i] != '\0')
+  j = 0;
+  x = x - 1;
+  while (i <= x)
     {
-      my_putchar('\n');
-      j = 0;
       while (tab[i][j] != '\0')
 	{
 	  my_putchar(tab[i][j]);
-	  if(tab[i][j] == 's')
+	  if (tab[i][j] == 's')
 	    {
 	      s_coord->ypos = i;
 	      s_coord->xpos = j;
@@ -65,7 +77,12 @@ void	read_map(int argc, char *argv[])
 	  j++;
 	}
       i++;
-      }*/
+      j = 0;
+    }
+  my_putchar('\n');
+  my_put_nbr(s_coord->ypos);
+  my_put_nbr(s_coord->xpos);
+    
 }
 
 void	 generate_map(int argc, char *argv[])
