@@ -1,0 +1,28 @@
+/*
+** structures.h for snake in /home/carra/Desktop/Snake
+** 
+** Made by SANCHEZ Pierre
+** Login   <sanche_p@etna-alternance.net>
+** 
+** Started on  Thu Apr 27 11:53:19 2017 SANCHEZ Pierre
+** Last update Thu Apr 27 11:53:25 2017 SANCHEZ Pierre
+*/
+
+typedef struct tag_node {
+  char x;
+  char y;
+} node;
+
+node body;
+node head;
+node tail;
+node fruit;
+
+typedef struct tag_queue {
+  int first;
+  int last;
+  int len;
+  node elems[QUEUE_SIZE];
+} queue;
+
+queue snake;
