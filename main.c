@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 04:41:18 2017 SANCHEZ Pierre
+** Last update Thu Apr 27 05:16:32 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
@@ -32,11 +32,12 @@ void	read_map(int argc, char *argv[])
   s_coord = malloc(sizeof(t_coord));
   while (((c = fgetc(f)) != EOF))
     {
-      if (c == '\n') {
-	i++;
-	tmp = j;
-	j = 0;
-      }
+      if (c == '\n')
+	{
+	  i++;
+	  tmp = j;
+	  j = 0;
+	}
       else
 	j++;
     }
@@ -61,6 +62,14 @@ void	read_map(int argc, char *argv[])
       tab[i][j] = c;
       j++;
     }
+  display(x, tab, s_coord);
+}
+
+int	display(int x, char **tab, t_coord *s_coord)
+{
+  int	i;
+  int	j;
+
   i = 0;
   j = 0;
   x = x - 1;
@@ -80,9 +89,7 @@ void	read_map(int argc, char *argv[])
       j = 0;
     }
   my_putchar('\n');
-  my_put_nbr(s_coord->ypos);
-  my_put_nbr(s_coord->xpos);
-    
+  return (0);
 }
 
 void	 generate_map(int argc, char *argv[])
