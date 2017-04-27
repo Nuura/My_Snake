@@ -3,6 +3,7 @@ CC	=		gcc
 NAME	=		snake
 
 SRC	=		main.c 		\
+			move.c		\
 			my_putchar.c 	\
 			my_putstr.c	\
 			my_put_nbr.c	\
