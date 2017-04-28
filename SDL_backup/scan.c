@@ -5,35 +5,42 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Thu Apr 27 12:17:39 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 12:36:25 2017 SANCHEZ Pierre
+** Last update Fri Apr 28 15:28:44 2017 SANCHEZ Pierre
 */
 
-#include "prototypes.h"
 #include "structures.h"
 
-int up()
+char up()
 {
+  char dir;
   printf("UP\n");
-  return(dir = UP);
-}
-int down()
-{
-  printf("DOWN\n");
-  return (dir = DOWN);
-}
-int left()
-{
-  printf("LEFT\n");
-  return (dir = LEFT);
-}
-int right()
-{
-  printf("RIGHT\n");
-  return (dir = RIGHT);
+  return(dir = 'U');
 }
 
-int escape()
+char down()
+{
+  char dir;
+  printf("DOWN\n");
+  return (dir = 'D');
+}
+
+char left()
+{
+  char dir;
+  printf("LEFT\n");
+  return (dir = 'L');
+}
+
+char right()
+{
+  char dir;
+  printf("RIGHT\n");
+  return (dir = 'R');
+}
+
+char escape()
 {
   printf("ESC\n");
+  SDL_Quit();
   exit(0);
 }

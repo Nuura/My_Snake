@@ -5,32 +5,42 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Thu Apr 27 12:17:39 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 12:19:50 2017 SANCHEZ Pierre
+** Last update Fri Apr 28 09:20:57 2017 SANCHEZ Pierre
 */
 
-int up(state[SDL_SCANCODE_UP])
+#include "prototypes.h"
+
+char up()
 {
+  char dir;
   printf("UP\n");
-  return(dir = UP);
-}
-int down(state[SDL_SCANCODE_DOWN])
-{
-  printf("DOWN\n");
-  return (dir = DOWN);
-}
-int left(state[SDL_SCANCODE_LEFT])
-{
-  printf("LEFT\n");
-  return (dir = LEFT);
-}
-int right (state[SDL_SCANCODE_RIGHT])
-{
-  printf("RIGHT\n");
-  return (dir = RIGHT);
+  return(dir = 'U');
 }
 
-int espace(state[SDL_SCANCODE_ESCAPE])
+char down()
+{
+  char dir;
+  printf("DOWN\n");
+  return (dir = 'D');
+}
+
+char left()
+{
+  char dir;
+  printf("LEFT\n");
+  return (dir = 'L');
+}
+
+char right()
+{
+  char dir;
+  printf("RIGHT\n");
+  return (dir = 'R');
+}
+
+char escape()
 {
   printf("ESC\n");
+  SDL_Quit();
   exit(0);
 }
