@@ -5,14 +5,15 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Thu Apr 27 10:34:20 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 20:38:26 2017 SANCHEZ Pierre
+** Last update Thu Apr 27 22:25:42 2017 SANCHEZ Pierre
 */
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "snake.h"
 
-/*char		*readline()
+char		*readline()
 {
   ssize_t	ret;
   char		*buff;
@@ -27,7 +28,7 @@
   buff[0] = '\0';
   free(buff);
   return (buff);
-  }*/
+}
 
 /*int		move(t_coord *s_coord, t_carte *carte)
 {
@@ -68,4 +69,63 @@ void	init_list(t_list *list)
   list->nb_link = 0;
   list->first = NULL;
   list->last = NULL;
+}
+
+int	add_elem(t_list *list, int nb)
+{
+  t_elem *elem;
+  if ((elem = malloc(sizeof(*elem))) == NULL)
+    return (1);
+  elem->nb_elem = nb;
+  list->nb_link++;
+  elem->next = NULL;
+  if (list->last)
+    list->last->next = elem;
+  if (list->first == NULL)
+    list->first = elem;
+  return (0);
+}
+
+/*void	detect_snake(char **tab)
+{
+  int		i;
+  int		j;
+  t_list	snake;
+  int		s;
+  i = 0;
+  j = 0;
+  while (tab[i][j] != '\0')
+    {
+      if (tab[i][j] == 's')
+	{
+	  s++;
+	  add_elem(snake, s);
+	}
+      j++;
+    }
+  i++;
+  }*/
+
+int	move(t_coord *s_coord, t_carte *s_carte)
+{
+  int	z;
+  char	*reponse;
+
+  printf("oui");
+  z = 0;
+  while (z != 1)
+    {
+      reponse = readline();
+      if (my_strcmp(reponse, "d") == 0)
+	{
+	  printf("LOL");
+	  break;
+	}
+    }
+  return (0);
+}
+
+int             move_right(t_coord *s_coord, char **map);
+{
+  
 }

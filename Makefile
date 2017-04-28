@@ -7,6 +7,7 @@ SRC	=		main.c 		\
 			my_putchar.c 	\
 			my_putstr.c	\
 			my_put_nbr.c	\
+			my_strcmp.c	\
 			snake.h
 
 CFLAGS	=		-Wall -Werror -Wpedantic

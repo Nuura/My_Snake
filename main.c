@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 10:28:00 2017 SANCHEZ Pierre
+** Last update Thu Apr 27 22:05:10 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
@@ -78,11 +78,13 @@ int		display(int x, char **tab)
   int		i;
   int		j;
   t_coord	*s_coord;
-
+  t_carte	*s_carte;
+  
   i = 0;
   j = 0;
   x = x - 1;
   s_coord = malloc(sizeof(t_coord));
+  s_carte = malloc(sizeof(t_carte));
   while (i <= x)
     {
       while (tab[i][j] != '\0')
@@ -99,6 +101,7 @@ int		display(int x, char **tab)
       j = 0;
     }
   my_putchar('\n');
+  move(s_coord, s_carte);
   return (0);
 }
 
