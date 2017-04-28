@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:07 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 22:05:10 2017 SANCHEZ Pierre
+** Last update Fri Apr 28 01:21:48 2017 SANCHEZ Pierre
 */
 
 #include <stdio.h>
@@ -24,7 +24,7 @@ void		read_map(int argc, char *argv[])
   int		x;
   int		tmp;
   char		**tab;
-
+      
   f = fopen(argv[1], "r");
   i = 0;
   j = 0;
@@ -43,7 +43,7 @@ void		read_map(int argc, char *argv[])
   tab = malloc(sizeof(char *) * (i + 1));
   malloc_tab(tab, i, tmp, argv);
   display(x, tab);
-}
+  }
 
 void		malloc_tab(char **tab, int i, int tmp, char *argv[])
 {
@@ -79,7 +79,6 @@ int		display(int x, char **tab)
   int		j;
   t_coord	*s_coord;
   t_carte	*s_carte;
-  
   i = 0;
   j = 0;
   x = x - 1;

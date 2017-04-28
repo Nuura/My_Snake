@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Thu Apr 27 10:34:20 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 22:25:42 2017 SANCHEZ Pierre
+** Last update Fri Apr 28 01:21:04 2017 SANCHEZ Pierre
 */
 #include <stdlib.h>
 #include <fcntl.h>
@@ -119,13 +119,13 @@ int	move(t_coord *s_coord, t_carte *s_carte)
       if (my_strcmp(reponse, "d") == 0)
 	{
 	  printf("LOL");
-	  break;
 	}
     }
   return (0);
 }
 
-int             move_right(t_coord *s_coord, char **map);
+/*int             move_right(t_coord *s_coord, char **map, int i, int j)
 {
-  
-}
+  map[i][j] = ' ';
+  map[i][j + 1] = 's';
+  }*/
