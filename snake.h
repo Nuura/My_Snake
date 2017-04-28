@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Mon Apr 24 15:29:54 2017 SANCHEZ Pierre
-** Last update Thu Apr 27 10:47:50 2017 SANCHEZ Pierre
+** Last update Thu Apr 27 20:31:53 2017 SANCHEZ Pierre
 */
 
 typedef struct  s_carte
@@ -19,6 +19,19 @@ typedef struct s_coord
   int          xpos;
   int          ypos;
 }              t_coord;
+
+typedef struct s_list
+{
+  int nb_link;
+  struct s_elem *first;
+  struct s_elem *last;
+} t_list;
+
+typedef struct s_elem
+{
+  int nb_elem;
+  struct s_elem *next;
+} t_elem;
 
 void		my_putchar(char c);
 void		my_putstr(char *str);
