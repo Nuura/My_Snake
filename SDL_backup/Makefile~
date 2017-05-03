@@ -2,8 +2,7 @@ CC	=		gcc
 
 NAME	=		snake
 
-SRC	=		main.c	\
-			scan.c
+SRC	=		main.c
 
 CFLAGS	=		-Wall -Werror -Wpedantic
 

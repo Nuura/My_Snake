@@ -16,7 +16,7 @@ SDL	=		sdl2-config --cflags --libs
 all:			$(NAME)
 
 $(NAME):	
-			$(CC) $(CFLAGS) -o  $(NAME) $(SRC) `$(SDL)`
+			$(CC) $(FLAGS) -o  $(NAME) $(SRC) `$(SDL)`
 
 clean:
 			$(RM) $(OBJ)
